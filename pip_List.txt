@@ -1,0 +1,18 @@
+pip freeze > requirements.txt - создать файл requirements.txt
+pip install -r requirements.txt - установить зависимости из файла requirements.txt
+
+pip install Django
+pip install pillow
+pip install Unidecode
+
+pip install psycopg2
+pip install mysqlclient
+
+pip install djangorestframework
+pip install django-cors-headers
+pip install djangorestframework-simplejwt
+
+
+
+pip install 
+
