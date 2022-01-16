@@ -63,3 +63,5 @@ class PostAdmin(admin.ModelAdmin):
 #     save_as = True
 #     save_on_top = True
 #     list_display = ('id', 'post', 'username', 'comment', 'active')
+
+# fffff
