@@ -17,8 +17,8 @@ def get_user_suffix(user_id):
 
 def post_img_dir(instance, filename):
     ext = filename.split('.')[-1]
-    if instance.created:
-        date_suffix = instance.created.strftime("%Y")
+    if instance.created_at:
+        date_suffix = instance.created_at.strftime("%Y")
     else: date_suffix = datetime.now().strftime("%Y")
     
     filename = "%s.%s" % (str(uuid.uuid4())[:13], ext)
@@ -149,29 +149,29 @@ class Post(models.Model):
         super(Post, self).save(*args, **kwargs)
         
         
-# class Comment(models.Model):
-#     post = models.ForeignKey(
-#         Post, 
-#         on_delete=models.PROTECT, 
-#         related_name='comments')
-#     username = models.ForeignKey(
-#         User, 
-#         on_delete=models.PROTECT, 
-#         related_name='user_name')
-#     profile = models.ForeignKey(
-#         'users.Profile', 
-#         on_delete=models.PROTECT)
+class Comment(models.Model):
+    post = models.ForeignKey(
+        Post, 
+        on_delete=models.PROTECT, 
+        related_name='comments')
+    user = models.ForeignKey(
+        User, 
+        on_delete=models.PROTECT, 
+        related_name='user_name')
+    # profile = models.ForeignKey(
+    #     'users.Profile', 
+    #     on_delete=models.PROTECT)
     
     # title = models.CharField(max_length=80)
     # email = models.EmailField()
-    # comment = models.CharField(max_length=2000)
-    # created_at = models.DateTimeField(auto_now_add=True)
-    # updated_at = models.DateTimeField(auto_now=True)
-    # active = models.BooleanField(default=True)
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    active = models.BooleanField(default=True)
     
-    # class Meta:
-    #     ordering = ('-created_at',)
+    class Meta:
+        ordering = ('-created_at',)
 
-    # def __str__(self):
-        # return self.comment
+    def __str__(self):
+        return self.comment
         # return 'Comment by {} on {}'.format(self.title, self.post)

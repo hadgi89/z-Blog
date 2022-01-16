@@ -14,4 +14,6 @@ urlpatterns = [
     path("feedback/", FeedBackView.as_view()),
     path('signup/', SignupView.as_view()),
     path('profile/', UserView.as_view()),
+    path("comments/", CommentView.as_view()),
+    path("comments/<slug:post_slug>/", CommentView.as_view()),
 ]

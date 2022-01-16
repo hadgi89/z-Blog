@@ -53,13 +53,13 @@ class PostAdmin(admin.ModelAdmin):
     def get_form(self, request, obj=None, **kwargs):
         self.exclude = ('url', )
         form = super(PostAdmin, self).get_form(request, obj, **kwargs)
-        form.base_fields['username'].initial = request.user
+        form.base_fields['user'].initial = request.user
         form.base_fields['profile'].initial = request.user.profile
         return form
 
 
-@admin.register(Comment)
-class CommentAdmin(admin.ModelAdmin):
-    save_as = True
-    save_on_top = True
-    list_display = ('id', 'post', 'username', 'comment', 'active')
+# @admin.register(Comment)
+# class CommentAdmin(admin.ModelAdmin):
+#     save_as = True
+#     save_on_top = True
+#     list_display = ('id', 'post', 'username', 'comment', 'active')

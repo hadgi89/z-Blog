@@ -36,7 +36,7 @@ class TagSerializer(serializers.ModelSerializer):
 class PostSerializer(serializers.ModelSerializer):
 
     user = serializers.SlugRelatedField(
-        slug_field="username", 
+        slug_field="user", 
         queryset=User.objects.all(),)
     
     category = serializers.StringRelatedField(
@@ -84,3 +84,17 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
+
+
+class CommentSerializer(serializers.ModelSerializer):
+
+    user = serializers.SlugRelatedField(slug_field="username", queryset=User.objects.all())
+    post = serializers.SlugRelatedField(slug_field="slug", queryset=Post.objects.all())
+
+    class Meta:
+        model = Comment
+        fields = ("id", "post", "user", "comment", "created_at")
+        lookup_field = 'id'
+        extra_kwargs = {
+            'url': {'lookup_field': 'id'}
+        }
