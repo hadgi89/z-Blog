@@ -1,12 +1,13 @@
 <template>
     <div class="container">
-        <!-- <div class="h-logo">
-            <el-image
-            style="height: 40px"
-            src="logo9.png"
-            ></el-image>
-        </div> -->
+        <div class="h-logo">
+            <el-link>
+                <el-image style="height: 40px" src="logo9.png"></el-image>
+            </el-link>
+            
+        </div>
         <div class="h-nav">
+            
             <el-menu
             :default-active="activeIndex"
             class="el-menu-demo"
@@ -15,25 +16,30 @@
             background-color="#545c64"
             text-color="#fff"
             active-text-color="#ffd04b">
-                <el-menu-item index="1" class="logo">
-                    <el-image
-                    style="width: 40px; height: 40px"
-                    src="logo9.png"
-                    ></el-image>
-                </el-menu-item>
                 <el-menu-item index="2">ГЛАВНАЯ</el-menu-item>
-                <el-menu-item index="3">ГЛАВНАЯ</el-menu-item>
-                <el-menu-item index="4">СТАТЬИ</el-menu-item>
-                <el-menu-item index="5">ХАБЫ</el-menu-item>
-                <el-menu-item index="6">АВТОРЫ</el-menu-item>
+                <el-menu-item index="3">СТАТЬИ</el-menu-item>
+                <el-menu-item index="4">ХАБЫ</el-menu-item>
+                <el-menu-item index="5">АВТОРЫ</el-menu-item>
             </el-menu>
         </div>
         
         <div class='h-menu'>
-            <el-avatar 
-            size="large" 
-            src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png">
-            </el-avatar>
+            <el-link class="search-link" :underline="false" icon="el-icon-search">
+                <!-- <i class="el-icon-search"></i> -->
+            </el-link>
+             
+             
+           
+            <el-dropdown trigger="click">
+                <el-link class="el-dropdown-link" :underline="false" icon="el-icon-user"></el-link>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item>
+                        <el-button plain>Войти</el-button>
+                        <el-button type="info">Регистрация</el-button>
+                    </el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-circle-plus">Как стать автором</el-dropdown-item>
+                </el-dropdown-menu>
+            </el-dropdown>
         </div>
     </div>
 
@@ -60,7 +66,7 @@ export default {
 <style scoped>
     .container {
         display: grid;
-        grid-template-columns: auto 100px;
+        grid-template-columns: 50px auto 100px;
         gap: 20px;
         align-items: center;
     }
@@ -70,13 +76,39 @@ export default {
     }
     
     .h-menu {
+        display: inline-flex;
         justify-self : end;
+        align-items: center;
+        /* justify-content: center; */
+        /* align-content : center; */
+        /* text-align: center; */
     }
 
-    .logo .is-active {
-        color: transparent;
+
+    .search-link {
+        font-size: 24px;
+        color: #fff;
+        /* align-self : center; */
+        margin-right: 15px;
+    }
+
+    .search-link:hover {
+        color: #ffd04b;
+    }
+
+    .el-dropdown-link {
+        font-size: 24px;
+        color: #fff;
+        /* align-self : center; */
+    }
+
+    .el-dropdown-link:hover {
+        color: #ffd04b;
+        /* cursor: pointer; */
+    }
+
+    .el-dropdown-menu__item:hover {
         background-color: transparent;
-        border: none;
     }
-
+        
 </style>
