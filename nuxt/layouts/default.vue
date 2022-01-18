@@ -26,6 +26,6 @@ export default {
     .el-header {
       /* margin: 0; */
       /* padding: 0; */
-      background-color: #545c64;
+      background-color: #a2e430;
     }
 </style>
