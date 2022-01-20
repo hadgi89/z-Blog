@@ -97,8 +97,6 @@
 
 
 <style scoped>
-  
-  
   .header-wrapper {
     display: grid;
     grid-template-columns: 50px auto 100px;

@@ -29,23 +29,30 @@
           <nuxt-link to="/users">АВТОРЫ</nuxt-link>
         </el-menu-item>
       </el-menu>
-      
-      <el-form :inline="true" size="mini">
+    </div>
+        
+    <div class='h-usermenu'>
+      <!-- <el-form :inline="true" size="mini">
         <el-form-item>
           <el-input placeholder="Найти... "></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" >Query</el-button>
-        </el-form-item>
-      </el-form>
-
-      
-    </div>
-        
-    <div class='h-usermenu'>
-      <nuxt-link class="search-link" to="/search">
+          <nuxt-link class="search-link" to="/search">
         <i class="el-icon-search"></i>
       </nuxt-link>
+        </el-form-item>
+      </el-form> -->
+      <el-input
+        class="inp"
+        placeholder="Поиск..."
+        suffix-icon="el-icon-search"
+        size="medium"
+        v-model="input1">
+      </el-input>
+      
+      <!-- <nuxt-link class="search-link" to="/search">
+        <i class="el-icon-search"></i>
+      </nuxt-link> -->
       
       <nuxt-link class='signin-link' to="/signin">Sign in</nuxt-link>
       
@@ -84,36 +91,37 @@
     name: "Header",
     data() {
       return {
-        activeIndex: '2',
-      };
-    },
-    methods: {
-      // submit(){
-      //   this.$router.push("/search?q="+this.q);
-      // }
+        input1: '',
+      }
     }
   }
 </script>
 
 
 <style scoped>
-  
-  
   .header-wrapper {
     display: grid;
-    grid-template-columns: 50px auto 100px;
+    grid-template-columns: 50px auto auto;
     gap: 20px;
+    background-color: rgb(175, 111, 235);
+    height: 100%;
     align-items: center;
   }
 
+  .h-logo {
+    background-color: #e7c451;
+    display: flex;
+    justify-content: center;
+
+  }
   .h-navbar {
-    /* justify-self : start; */
+    background-color: rgb(128, 201, 121);
   }
 
   .h-usermenu {
-    height: 100%;
+    background-color: rgb(83, 185, 185);
     display: inline-flex;
-    /* justify-self : end; */
+    justify-self : end;
     align-items: center;
   }
 
@@ -126,8 +134,6 @@
   .search-link:hover {
     color: #ffd04b;
   }
-
-
 
   .signup-link {
     white-space: nowrap;
@@ -157,12 +163,11 @@
     color: #ffd04b;
   }
 
-
-    .el-dropdown-link {
+  .el-dropdown-link {
     font-size: 24px;
     color: #fff;
   }
-
+  
   .el-dropdown-link:hover {
     color: #ffd04b;
   }
@@ -184,6 +189,15 @@
   }
 
   .el-form {
-    display: inline-flex;
+    background-color: #ffd04b;
+    
+  }
+
+  .el-input {
+    margin-right: 12px;
+  }
+
+  .el-input__inner:focus {
+    border: solid 1px #ffd04b !important;
   }
 </style>
