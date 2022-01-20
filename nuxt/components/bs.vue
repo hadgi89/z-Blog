@@ -72,4 +72,7 @@
     color: var(--gray-light);
   }
 
+  .form-inp:active {
+    border-color: chocolate !important;
+  }
 </style>
