@@ -88,6 +88,10 @@
 
 
 <style scoped>
+  
+
+  
+  
   .header-wrapper {
     display: grid;
     /* gap: 0 10px; */
@@ -196,6 +200,12 @@
   .el-input {
     margin-right: 12px;
   }
+
+  .el-input::v-deep .el-input__inner:focus,
+  .el-input::v-deep .el-input__inner:hover { 
+    border-color: #ffd04b;
+}
+  
 
   @media (max-width: 765px) {
     .wrapper {
