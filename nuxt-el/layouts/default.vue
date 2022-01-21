@@ -32,7 +32,7 @@ export default {
   }
 
   .header {
-    background-color: #617777;
+    background-color: var(--primary);
     grid-area: header;
   }
 

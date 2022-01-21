@@ -16,9 +16,6 @@ a {
 	box-sizing: border-box;
 }
 
-ul {
-  display: contents;
-}
 
 :root {
 	--black: #3B434E;
