@@ -21,6 +21,7 @@ export default {
 <style scoped>
   .wrapper {
     display: grid;
+    background-color: #F5F5F5;
     gap: 0 30px;
     min-height: 100vh;
     grid-template-columns: 1fr 300px;
@@ -37,17 +38,17 @@ export default {
   }
 
   .content {
-    background-color: #b8e0e0;
+    /* background-color: #b8e0e0; */
     grid-area: content;
   }
 
   .aside {
-    background-color: #b289d8;
+    /* background-color: #b289d8; */
     grid-area: aside;
   }
 
   .footer {
-    background-color: #617777;
+    /* background-color: #617777; */
     grid-area: footer;
   }
 

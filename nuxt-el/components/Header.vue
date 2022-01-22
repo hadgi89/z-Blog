@@ -9,9 +9,8 @@
     <div class="h-navbar">
       <el-menu
       :default-active="2"
-      class="el-menu-demo"
       mode="horizontal"
-      background-color="#545c64"
+      background-color="#F5F5F5"
       text-color="#fff"
       active-text-color="#ffd04b">
         <el-menu-item index="2">
@@ -104,19 +103,19 @@
   }
 
   .h-logo {
-    background-color: var(--gray-light);
+    /* background-color: var(--gray-light); */
     grid-area: h-logo;
     display: flex;
     align-items: center;
   }
 
   .h-navbar {
-    background-color: var(--red-light);
+    /* background-color: var(--red-light); */
     grid-area: h-navbar;
   }
 
   .h-menu {
-    background-color: #545c64;
+    /* background-color: #545c64; */
     grid-area: h-menu;
     display: flex;
     align-items: center;
@@ -124,7 +123,20 @@
 
   .el-menu--horizontal {
     border: none;
+    background-color: #F5F5F5;
   }
+
+  .el-menu--horizontal>.el-menu-item:hover,
+  .el-menu--horizontal>.el-menu-item:focus,
+  .el-menu--horizontal>.el-menu-item:active {
+    background-color: #F5F5F5;
+  }
+
+  .el-menu--horizontal>.el-menu-item {
+    color: #606266;
+  }
+
+
   .search-link {
     font-size: 24px;
     color: #fff;
