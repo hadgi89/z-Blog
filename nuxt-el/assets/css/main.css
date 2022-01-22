@@ -2,14 +2,13 @@ html,
 body {
 	margin: 0;
 	padding: 0;
-	color: var(--black);
-	background: #F5F6F8;
+	color: var(--el-regularText);
+	background: var(--blueGrey-50);
 	font-family: "Noto Sans KR", sans-serif;
 }
 
-a {
+a, nuxt-link {
 	text-decoration: none;
-	/* color: inherit; */
 }
 
 *, *:before, *:after {
@@ -31,4 +30,31 @@ a {
 	--green: #007B48;
 	--green-light: #C8F8E4;
 	--font-family: "Noto Sans KR", sans-serif;
+
+  --el-brandColor: #409EFF;
+  --el-brandColor-1: #53a8ff;
+  --el-brandColor-2: #66b1ff;
+  --el-brandColor-3: #79bbff;
+  --el-brandColor-4: #8cc5ff;
+  --el-brandColor-5: #a0cfff;
+  --el-brandColor-5: #b3d8ff;
+  --el-brandColor-5: #c6e2ff;
+  --el-brandColor-5: #a0cfff;
+
+  --el-primaryText: #303133;
+  --el-regularText: #606266;
+  --el-secondaryText: #909399;
+  --el-secondaryText-1: #e9e9eb;
+  --el-secondaryText-2: #f4f4f5;
+  --el-placeholderText: #C0C4CC;
+  
+  --el-baseBorder: #DCDFE6;
+  --el-lightBorder: #DCDFE6;
+  --el-lighterBorder: #EBEEF5;
+  --el-extraLightBorder: #EBEEF5;
+
+  --grey-50: #FAFAFA;
+  --grey-100: #F5F5F5;
+
+  --blueGrey-50: #ECEFF1;
 }

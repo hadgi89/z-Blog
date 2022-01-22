@@ -8,11 +8,11 @@
     
     <div class="h-navbar">
       <el-menu
-      :default-active="2"
+      default-active="2"
       mode="horizontal"
-      background-color="#F5F5F5"
-      text-color="#fff"
-      active-text-color="#ffd04b">
+      background-color="var(--blueGrey-50)"
+      text-color="var(--el-secondaryText)"
+      active-text-color="var(--el-brandColor)">
         <el-menu-item index="2">
           <nuxt-link to="/">ГЛАВНАЯ</nuxt-link>
         </el-menu-item>
@@ -30,7 +30,6 @@
     
     <div class="h-menu">
       <el-input
-        class="inp"
         placeholder="Поиск..."
         suffix-icon="el-icon-search"
         size="medium"
@@ -52,7 +51,7 @@
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>
             <i class="el-icon-user"></i>
-            <nuxt-link to="/prifile">Профиль</nuxt-link>
+            <nuxt-link to="/profile">Профиль</nuxt-link>
           </el-dropdown-item>
           <el-dropdown-item>
             <i class="el-icon-setting"></i>
@@ -88,13 +87,9 @@
 
 <style scoped>
   
-
-  
-  
   .header-wrapper {
     display: grid;
-    /* gap: 0 10px; */
-    margin: 0 20px;
+    /* margin: 0 20px; */
     min-height: 60px;
     grid-template-columns: auto 1fr auto;
     grid-template-rows: auto; 
@@ -103,54 +98,68 @@
   }
 
   .h-logo {
-    /* background-color: var(--gray-light); */
     grid-area: h-logo;
     display: flex;
     align-items: center;
+    margin-right: 30px;
+    
   }
 
   .h-navbar {
-    /* background-color: var(--red-light); */
     grid-area: h-navbar;
   }
 
   .h-menu {
-    /* background-color: #545c64; */
     grid-area: h-menu;
     display: flex;
     align-items: center;
   }
 
+
+  /* --------------------------------- */
   .el-menu--horizontal {
     border: none;
-    background-color: #F5F5F5;
+    background-color: var(--blueGrey-50);
   }
 
   .el-menu--horizontal>.el-menu-item:hover,
   .el-menu--horizontal>.el-menu-item:focus,
   .el-menu--horizontal>.el-menu-item:active {
-    background-color: #F5F5F5;
+    background-color: var(--blueGrey-50) !important;
   }
-
-  .el-menu--horizontal>.el-menu-item {
-    color: #606266;
-  }
+  /* --------------------------------- */
 
 
+  /* --------------------------------- */
   .search-link {
-    font-size: 24px;
-    color: #fff;
+    font-size: 22px;
+    color: var(--el-regularText);
     margin-right: 15px;
   }
 
   .search-link:hover {
-    color: #ffd04b;
+    color: var(--el-brandColor);
+  }
+  /* --------------------------------- */
+
+
+  /* --------------------------------- */
+  .signin-link {
+    white-space: nowrap;
+    color: var(--el-regularText);
+    padding-bottom: 3px;
+    padding-inline: 10px;
+    margin-right: 12px;
+  }
+
+  .signin-link:hover {
+    color: var(--el-brandColor);
   }
 
   .signup-link {
     white-space: nowrap;
-    color: #fff;
-    border: solid 1px #fff;
+    color: var(--el-regularText);
+    border: solid 1px var(--el-regularText);
     border-radius: 3px;
     padding-bottom: 3px;
     padding-inline: 10px;
@@ -158,79 +167,49 @@
   }
 
   .signup-link:hover {
-    color: #ffd04b;
-    border-color: #ffd04b;
+    color:  var(--el-brandColor);
+    border-color: var(--el-brandColor);
   }
+  /* --------------------------------- */
 
 
-  .signin-link {
-    white-space: nowrap;
-    color: #fff;
-    padding-bottom: 3px;
-    padding-inline: 10px;
-    margin-right: 12px;
-  }
-
-  .signin-link:hover {
-    color: #ffd04b;
-  }
-
+  /* --------------------------------- */
   .el-dropdown-link {
     font-size: 24px;
-    color: #fff;
+    color: var(--el-regularText);
   }
   
   .el-dropdown-link:hover {
-    color: #ffd04b;
+    color: var(--el-brandColor);
   }
 
   .el-dropdown-menu__item {
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  .el-dropdown-menu__item i {
-    font-size: 18px;
-    font-weight: 500;
-    margin-right: 10px;
+    /* font-size: 14px; */
+    /* font-weight: 500; */
   }
 
   .el-dropdown-menu__item:hover {
-    background-color: #545c64;
-    color: #ffd04b;
+    /* background-color: #545c64; */
+    /* color: var(--el-brandColor); */
   }
 
-  .el-popper {
-    /* margin-top: 20px; */
+  .el-dropdown-menu__item i {
+    /* font-size: 18px; */
+    /* font-weight: 500; */
+    margin-right: 10px;
   }
 
-  .el-form {
-    background-color: #ffd04b;
-    
-  }
+  
+  /* --------------------------------- */
 
-  .el-input {
-    margin-right: 12px;
-  }
 
-  .el-input::v-deep .el-input__inner:focus,
-  .el-input::v-deep .el-input__inner:hover { 
-    border-color: #ffd04b;
-}
+  /* .el-input::v-deep .el-input__inner:focus, */
+  /* .el-input::v-deep .el-input__inner:hover {  */
+  /* border-color: #ffd04b; */
+  /* } */
   
 
-  @media (max-width: 765px) {
-    .wrapper {
-      grid-template-columns: minmax(320px, 1fr);
-      grid-template-areas: 
-        "header"
-        "content"
-        "footer"
-    }
+  
 
-    .aside {
-      display: none;
-    }
-
-  }
+  
 </style>

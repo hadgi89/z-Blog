@@ -21,34 +21,29 @@ export default {
 <style scoped>
   .wrapper {
     display: grid;
-    background-color: #F5F5F5;
     gap: 0 30px;
     min-height: 100vh;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: auto minmax(320px, 1200px) 300px auto;
     grid-template-rows: auto 1fr auto; 
     grid-template-areas: 
-      "header header"
-      "content aside"
-      "footer footer"
+      ". header header ."
+      ". content aside ."
+      "footer footer footer footer"
   }
 
   .header {
-    /* background-color: var(--primary); */
     grid-area: header;
   }
 
   .content {
-    /* background-color: #b8e0e0; */
     grid-area: content;
   }
 
   .aside {
-    /* background-color: #b289d8; */
     grid-area: aside;
   }
 
   .footer {
-    /* background-color: #617777; */
     grid-area: footer;
   }
 
