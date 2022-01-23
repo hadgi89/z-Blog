@@ -2,7 +2,7 @@
   <div class="header-wrapper">
     <div class="h-logo">
       <nuxt-link to="/">
-        <el-image style="height: 70px" src="logo8.png"></el-image>
+        <el-image style="height: 60px" src="logo8.png"></el-image>
       </nuxt-link>
     </div>
     
@@ -23,24 +23,37 @@
           <nuxt-link to="/habs">ХАБЫ</nuxt-link>
         </el-menu-item>
         <el-menu-item index="5">
-          <nuxt-link to="/users">АВТОРЫ</nuxt-link>
+          <nuxt-link to="/authors">АВТОРЫ</nuxt-link>
         </el-menu-item>
       </el-menu>
     </div>
     
     <div class="h-menu">
-      <el-input
-        placeholder="Поиск..."
-        suffix-icon="el-icon-search"
-        size="medium"
-        v-model="input1">
-      </el-input>
       
-      <nuxt-link class="search-link" to="/search">
-        <i class="el-icon-search"></i>
-      </nuxt-link>
+      <!-- Форма поиска -->
+      <el-form
+      class="searchForm" 
+      :inline="true">
+        
+        <el-form-item>
+          <el-input
+          size="medium"
+          placeholder="Поиск..."
+          suffix-icon="el-icon-search"
+          name="q"
+          v-model="q">
+          </el-input>
+        </el-form-item>
+        
+        <el-form-item>
+          <el-button size="medium" plain @click.stop.prevent="submit()">
+            <i class="el-icon-search"></i>
+          </el-button>
+        </el-form-item>
+      
+      </el-form>
 
-      <nuxt-link class='signin-link' to="/signin">Sign in</nuxt-link>
+      <nuxt-link class='signin-link' to="/signin" >Sign in</nuxt-link>
       
       <nuxt-link class='signup-link' to="/signup">Sign up</nuxt-link>
       
@@ -57,15 +70,15 @@
           </nuxt-link>
           <el-dropdown-item>
             <i class="el-icon-setting"></i>
-            Настройки
+            <nuxt-link to="/settings">Настройки</nuxt-link>
           </el-dropdown-item>
           <el-dropdown-item>
             <i class="el-icon-help"></i>
-            Поддержка
+            <nuxt-link to="/support">Поддержка</nuxt-link>
           </el-dropdown-item>
           <el-dropdown-item>
             <i class="el-icon-turn-off"></i>
-            Выйти
+            <nuxt-link to="/logout">Выйти</nuxt-link>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -80,7 +93,12 @@
     name: "Header",
     data() {
       return {
-        input1: '',
+        q: null,
+      }
+    },
+    methods: {
+      submit(){
+        this.$router.push("/search?q="+this.q);
       }
     }
   }
@@ -117,17 +135,17 @@
     align-items: center;
   }
 
+  .el-form-item {
+    /* align-items: center; */
+    /* align-content: center; */
+    margin-bottom: 0;
+    vertical-align: middle;
 
+  }
   /* --------------------------------- */
   .el-menu--horizontal {
     border: none;
     background-color: var(--blueGrey-50);
-    font-size: 14px;
-    font-weight: 700;
-  }
-
-  .el-menu--horizontal>.el-menu-item {
-    border: none;
   }
 
   .el-menu--horizontal>.el-menu-item:hover,
@@ -137,16 +155,6 @@
   }
   /* --------------------------------- */
 
-  .el-input {
-    margin-right: 15px;
-  }
-  .el-input::v-deep .el-input__inner {
-    border-color: var(--el-secondaryText);
-  }
-  .el-input::v-deep .el-input__inner:focus,
-  .el-input::v-deep .el-input__inner:hover { 
-    border-color: var(--el-brandColor);
-  }
 
   /* --------------------------------- */
   .search-link {
@@ -158,7 +166,10 @@
   .search-link:hover {
     color: var(--el-brandColor);
   }
+  /* --------------------------------- */
 
+
+  /* --------------------------------- */
   .signin-link {
     white-space: nowrap;
     color: var(--el-regularText);
@@ -194,15 +205,13 @@
     color: var(--el-regularText);
   }
   
-  .el-dropdown-link:hover,
-  .el-dropdown-link:active,
-  .el-dropdown-link:focus {
+  .el-dropdown-link:hover {
     color: var(--el-brandColor);
   }
 
   .el-dropdown-menu__item {
-    font-size: 15px;
-    font-weight: 500;
+    /* font-size: 14px; */
+    /* font-weight: 500; */
   }
 
   .el-dropdown-menu__item:hover {
@@ -211,8 +220,8 @@
   }
 
   .el-dropdown-menu__item i {
-    font-size: 18px;
-    font-weight: 500;
+    /* font-size: 18px; */
+    /* font-weight: 500; */
     margin-right: 10px;
   }
 
@@ -220,7 +229,10 @@
   /* --------------------------------- */
 
 
-  
+  /* .el-input::v-deep .el-input__inner:focus, */
+  /* .el-input::v-deep .el-input__inner:hover {  */
+  /* border-color: #ffd04b; */
+  /* } */
   
 
   

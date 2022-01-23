@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <div class="header"><Header /></div>
-    <div class="content">CONTENT</div>
+    <div class="content"><Nuxt /></div>
     <div class="aside">ASIDE</div>
     <div class="footer">FOOTER</div>
   </div>
@@ -9,7 +9,7 @@
 
 
 <script>
-import Header from '@/components/Header'
+import Header from '~/components/Header'
 
 export default {
     components: {Header}
@@ -45,6 +45,7 @@ export default {
 
   .footer {
     grid-area: footer;
+    
   }
 
   @media (max-width: 765px) {
