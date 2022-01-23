@@ -2,7 +2,7 @@
   <div class="header-wrapper">
     <div class="h-logo">
       <nuxt-link to="/">
-        <el-image style="height: 40px" src="logo9.png"></el-image>
+        <el-image style="height: 70px" src="logo8.png"></el-image>
       </nuxt-link>
     </div>
     
@@ -49,21 +49,23 @@
           <i class="el-icon-user"></i>
         </span>
         <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item>
-            <i class="el-icon-user"></i>
-            <nuxt-link to="/profile">Профиль</nuxt-link>
-          </el-dropdown-item>
+          <nuxt-link to="/profile">
+            <el-dropdown-item>
+              <i class="el-icon-user"></i>
+              Профиль
+            </el-dropdown-item>
+          </nuxt-link>
           <el-dropdown-item>
             <i class="el-icon-setting"></i>
-            <nuxt-link to="/settings">Настройки</nuxt-link>
+            Настройки
           </el-dropdown-item>
           <el-dropdown-item>
             <i class="el-icon-help"></i>
-            <nuxt-link to="/support">Поддержка</nuxt-link>
+            Поддержка
           </el-dropdown-item>
           <el-dropdown-item>
             <i class="el-icon-turn-off"></i>
-            <nuxt-link to="/logout">Выйти</nuxt-link>
+            Выйти
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -120,6 +122,12 @@
   .el-menu--horizontal {
     border: none;
     background-color: var(--blueGrey-50);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .el-menu--horizontal>.el-menu-item {
+    border: none;
   }
 
   .el-menu--horizontal>.el-menu-item:hover,
@@ -129,6 +137,16 @@
   }
   /* --------------------------------- */
 
+  .el-input {
+    margin-right: 15px;
+  }
+  .el-input::v-deep .el-input__inner {
+    border-color: var(--el-secondaryText);
+  }
+  .el-input::v-deep .el-input__inner:focus,
+  .el-input::v-deep .el-input__inner:hover { 
+    border-color: var(--el-brandColor);
+  }
 
   /* --------------------------------- */
   .search-link {
@@ -140,10 +158,7 @@
   .search-link:hover {
     color: var(--el-brandColor);
   }
-  /* --------------------------------- */
 
-
-  /* --------------------------------- */
   .signin-link {
     white-space: nowrap;
     color: var(--el-regularText);
@@ -179,13 +194,15 @@
     color: var(--el-regularText);
   }
   
-  .el-dropdown-link:hover {
+  .el-dropdown-link:hover,
+  .el-dropdown-link:active,
+  .el-dropdown-link:focus {
     color: var(--el-brandColor);
   }
 
   .el-dropdown-menu__item {
-    /* font-size: 14px; */
-    /* font-weight: 500; */
+    font-size: 15px;
+    font-weight: 500;
   }
 
   .el-dropdown-menu__item:hover {
@@ -194,8 +211,8 @@
   }
 
   .el-dropdown-menu__item i {
-    /* font-size: 18px; */
-    /* font-weight: 500; */
+    font-size: 18px;
+    font-weight: 500;
     margin-right: 10px;
   }
 
@@ -203,10 +220,7 @@
   /* --------------------------------- */
 
 
-  /* .el-input::v-deep .el-input__inner:focus, */
-  /* .el-input::v-deep .el-input__inner:hover {  */
-  /* border-color: #ffd04b; */
-  /* } */
+  
   
 
   
